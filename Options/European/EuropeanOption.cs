@@ -8,12 +8,12 @@ abstract public class EuropeanOption
     protected double _d;  // Cost of carry
     protected double _T;  // Expiry date
 
-    protected MathNet.Numerics.Distributions.Normal distribution;
+    protected MathNet.Numerics.Distributions.Normal normalDist;
 
     // Default Constructor
     protected EuropeanOption()
     {
-        distribution = new MathNet.Numerics.Distributions.Normal();
+        normalDist = new MathNet.Numerics.Distributions.Normal();
         _K = 100;
         _vol = 0.1;
         _r = 0.05;
@@ -24,7 +24,7 @@ abstract public class EuropeanOption
     // Constructor
     protected EuropeanOption(double K, double vol, double r, double d, double T)  // : this()
     {
-        distribution = new MathNet.Numerics.Distributions.Normal();
+        normalDist = new MathNet.Numerics.Distributions.Normal();
         _K = K;
         _vol = vol;
         _r = r;
@@ -44,14 +44,14 @@ abstract public class EuropeanOption
     }
 
     // Gaussian probability density
-    protected double n(double x)
+    protected double P(double x)
     {
-        return distribution.Density(x);
+        return normalDist.Density(x);
     }
 
     // Cumulative Gaussian distribution
     protected double N(double x)
     {
-        return distribution.CumulativeDistribution(x);
+        return normalDist.CumulativeDistribution(x);
     }
 }
