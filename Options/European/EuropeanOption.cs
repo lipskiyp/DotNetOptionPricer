@@ -54,4 +54,22 @@ abstract public class EuropeanOption
     {
         return normalDist.CumulativeDistribution(x);
     }
+
+    // Price
+    public abstract double Price(double S);
+
+    // Delta
+    public abstract double Delta(double S);
+
+    // Gamma
+    public virtual double Gamma(double S)
+    {
+        return P(D1(S)) * Math.Exp(_d - _r) * _T / (S * _vol * Math.Sqrt(_T));
+    }
+
+    // Vega
+    public virtual double Vega(double S)
+    {
+        return S * Math.Sqrt(_T) * Math.Exp((_d - _r) * _T) * P(D1(S));
+    }
 }
