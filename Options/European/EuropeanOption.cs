@@ -1,6 +1,8 @@
+using OptionPricer.Options.Interfaces;
+
 namespace OptionPricer.Options.European;
 
-abstract public class EuropeanOption
+abstract public class EuropeanOption : IEuropeanOption
 {
     protected double _K;  // Strike price
     protected double _vol;  // Volatility
@@ -14,22 +16,14 @@ abstract public class EuropeanOption
     protected EuropeanOption()
     {
         normalDist = new MathNet.Numerics.Distributions.Normal();
-        _K = 100;
-        _vol = 0.1;
-        _r = 0.05;
-        _d = 0.02;
-        _T = 1;
+        _K = 100; _vol = 0.1; _r = 0.05; _d = 0.02; _T = 1;
     }
 
     // Constructor
     protected EuropeanOption(double K, double vol, double r, double d, double T)  // : this()
     {
         normalDist = new MathNet.Numerics.Distributions.Normal();
-        _K = K;
-        _vol = vol;
-        _r = r;
-        _d = d;
-        _T = T;
+        _K = K; _vol = vol; _r = r; _d = d; _T = T;
     }
 
     protected double D1(double S)
