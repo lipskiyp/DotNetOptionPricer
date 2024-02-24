@@ -1,4 +1,6 @@
-namespace OptionPricer.Options.European;
+using OptionPricer.Utils;
+
+namespace OptionPricer.Options.EuropeanOptions;
 
 public class EuropeanCallOption : EuropeanOption
 {
@@ -15,12 +17,12 @@ public class EuropeanCallOption : EuropeanOption
     // Price
     public override double Price(double S)
     {
-        return S * Math.Exp((_d - _r) * _T) * N(D1(S)) - _K * Math.Exp(-_r * _T) * N(D2(S));
+        return S * Math.Exp((_d - _r) * _T) * NormalDist.N(D1(S)) - _K * Math.Exp(-_r * _T) * NormalDist.N(D2(S));
     }
 
-    // Delta
-    public override double Delta(double S)
+    // Rho
+    public override double Rho(double S)
     {
-        return Math.Exp(_d - _r) * N(D1(S));
+        return _K * Math.Exp(-_r * _T) * NormalDist.N(D2(S)) * _T;
     }
 }
