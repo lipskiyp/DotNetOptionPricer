@@ -16,6 +16,6 @@ public class EuropeanReceiverSwaption : EuropeanSwaption
 
     public override double Price(double F)
     {
-        return 2.0;
+        return alpha(F) * Math.Exp(-_r * _T) * (_K * NormalDist.N(-D2(F)) - F * NormalDist.N(D1(F)));
     }
 }

@@ -1,6 +1,6 @@
 using OptionPricer.Options.EuropeanOptions;
 
-namespace OptionPricer.Extensions.European;
+namespace OptionPricer.Extensions.EuropeanOptions;
 
 public static class EuropeanOptionDisplay
 {
