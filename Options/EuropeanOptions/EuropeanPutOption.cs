@@ -17,7 +17,7 @@ public class EuropeanPutOption : EuropeanOption
     // Price
     public override double Price(double S)
     {
-        return _K * Math.Exp(-_r * _T) * NormalDist.N(-D2(S)) - S * NormalDist.N(-D1(S));
+        return K * Math.Exp(-r * T) * NormalDist.N(-D2(S)) - S * NormalDist.N(-D1(S));
     }
 
     // Delta
@@ -29,6 +29,6 @@ public class EuropeanPutOption : EuropeanOption
     // Rho
     public override double Rho(double S)
     {
-        return _K * Math.Exp(-_r * _T) * NormalDist.N(-D2(S)) * _T;
+        return K * Math.Exp(-r * T) * NormalDist.N(-D2(S)) * T;
     }
 }
