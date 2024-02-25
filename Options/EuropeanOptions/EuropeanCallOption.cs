@@ -17,12 +17,12 @@ public class EuropeanCallOption : EuropeanOption
     // Price
     public override double Price(double S)
     {
-        return S * Math.Exp((_d - _r) * _T) * NormalDist.N(D1(S)) - _K * Math.Exp(-_r * _T) * NormalDist.N(D2(S));
+        return S * Math.Exp((d - r) * T) * NormalDist.N(D1(S)) - K * Math.Exp(-r * T) * NormalDist.N(D2(S));
     }
 
     // Rho
     public override double Rho(double S)
     {
-        return _K * Math.Exp(-_r * _T) * NormalDist.N(D2(S)) * _T;
+        return K * Math.Exp(-r * T) * NormalDist.N(D2(S)) * T;
     }
 }

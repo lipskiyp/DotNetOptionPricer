@@ -16,6 +16,6 @@ public class EuropeanPayerSwaption : EuropeanSwaption
 
     public override double Price(double F)
     {
-        return alpha(F) * Math.Exp(-_r * _T) * (F * NormalDist.N(D1(F)) - _K * NormalDist.N(D2(F)));
+        return alpha(F) * Math.Exp(-r * T) * (F * NormalDist.N(D1(F)) - K * NormalDist.N(D2(F)));
     }
 }
