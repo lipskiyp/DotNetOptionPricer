@@ -1,4 +1,4 @@
-namespace OptionPricer.Options.Greeks;
+namespace OptionPricer.Greeks.Core;
 
 public interface IGreeksFirstOrder
 {

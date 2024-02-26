@@ -10,13 +10,13 @@ public static class EuropeanOptionDisplay
         Console.WriteLine($"Price: {option.Price(S)}");
 
         // First Order Greeks
-        Console.WriteLine($"Delta: {option.Delta(S)}");
-        Console.WriteLine($"Vega: {option.Vega(S)}");
-        Console.WriteLine($"Rho: {option.Rho(S)}");
+        Console.WriteLine($"Delta: {option.Greeks.Delta(S)}");
+        Console.WriteLine($"Vega: {option.Greeks.Vega(S)}");
+        Console.WriteLine($"Rho: {option.Greeks.Rho(S)}");
 
         // Second Order Greeks
-        Console.WriteLine($"Gamma: {option.Gamma(S)}");
-        Console.WriteLine($"Volga: {option.Volga(S)}");
-        Console.WriteLine($"Vanna: {option.Vanna(S)}");
+        Console.WriteLine($"Gamma: {option.Greeks.Gamma(S)}");
+        Console.WriteLine($"Volga: {option.Greeks.Volga(S)}");
+        Console.WriteLine($"Vanna: {option.Greeks.Vanna(S)}");
     }
 }
