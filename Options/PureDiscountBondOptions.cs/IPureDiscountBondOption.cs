@@ -2,8 +2,8 @@ using OptionPricer.Bonds.PureDiscountBonds;
 
 namespace OptionPricer.Options.PureDiscountBondOptions;
 
-public interface IVasicekModelOption
+public interface IPureDiscountBondOption
 {
-    // Option Price
+    // Vasicek model option Price
     public abstract double Price(VasicekModel model);
 }

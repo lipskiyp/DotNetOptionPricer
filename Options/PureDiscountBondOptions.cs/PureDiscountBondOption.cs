@@ -2,14 +2,14 @@ using OptionPricer.Bonds.PureDiscountBonds;
 
 namespace OptionPricer.Options.PureDiscountBondOptions;
 
-public abstract class PureDiscountBondOption : IVasicekModelOption
+public abstract class PureDiscountBondOption : IPureDiscountBondOption
 {
     public double t;  // Time
     public double s;  // PDB maturity date
     public double T;  // Option expiry date
-    public double K;  // Option strike price 
+    public double K;  // Option strike price
 
-    // Default Constructor 
+    // Default Constructor
     protected PureDiscountBondOption() : this(0.5, 2, 1, 0.8)
     {
     }
