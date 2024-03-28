@@ -1,5 +1,4 @@
-﻿using OptionPricer.Extensions.EuropeanOptions;
-using OptionPricer.Extensions.EuropeanSwaptions;
+﻿using OptionPricer.Utils.Extensions;
 using OptionPricer.Options.EuropeanOptions;
 using OptionPricer.Options.EuropeanSwaptions;
 

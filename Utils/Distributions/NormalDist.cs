@@ -1,4 +1,4 @@
-namespace OptionPricer.Utils;
+namespace OptionPricer.Utils.Distributions;
 
 public static class NormalDist
 {

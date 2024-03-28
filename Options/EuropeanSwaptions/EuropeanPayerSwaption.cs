@@ -1,15 +1,15 @@
-using OptionPricer.Utils;
+using OptionPricer.Utils.Distributions;
 
 namespace OptionPricer.Options.EuropeanSwaptions;
 
 public class EuropeanPayerSwaption : EuropeanSwaption
 {
-    // Default Constructor 
-    public EuropeanPayerSwaption() : base()
+    // Default Constructor
+    public EuropeanPayerSwaption() : this(0.1, 0.1, 0.1, 2, 1, 4)
     {
     }
 
-    // Constructor 
+    // Constructor
     public EuropeanPayerSwaption(double K, double vol, double r, double T, double t, int m) : base(K, vol, r, T, t, m)
     {
     }

@@ -1,5 +1,3 @@
-using OptionPricer.Options.PureDiscountBondOptions;
-
 namespace OptionPricer.Bonds.PureDiscountBonds;
 
 public class VasicekModel : PureDiscountBond
@@ -40,7 +38,7 @@ public class VasicekModel : PureDiscountBond
         return - (Math.Log(A(t, s)) - B(t, s) * r) / (s -t);
     }
 
-    // Spot rate volatility 
+    // Spot rate volatility
     public override double RVol(double t, double s)
     {
         return vol / (k * (s - t)) * (1 - Math.Exp(-k * (s - t)));

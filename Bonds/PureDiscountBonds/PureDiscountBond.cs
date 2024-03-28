@@ -1,12 +1,10 @@
-using OptionPricer.Options.PureDiscountBondOptions;
-
 namespace OptionPricer.Bonds.PureDiscountBonds;
 
 public abstract class PureDiscountBond
 {
     public double k;  // Speed of adjustment
     public double u;  // Long-term rate
-    public double vol;  // Short rate volatility 
+    public double vol;  // Short rate volatility
     public double r;  // Short rate
 
     // Default Constructor
@@ -26,6 +24,6 @@ public abstract class PureDiscountBond
     // Spot rate at time t for PDB with maturity at time s (t<=s)
     public abstract double RSpot(double t, double s);
 
-    // Spot rate volatility 
+    // Spot rate volatility
     public abstract double RVol(double t, double s);
 }

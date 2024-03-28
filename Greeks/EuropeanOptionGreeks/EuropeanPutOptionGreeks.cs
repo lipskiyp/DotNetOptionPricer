@@ -1,5 +1,5 @@
 using OptionPricer.Options.EuropeanOptions;
-using OptionPricer.Utils;
+using OptionPricer.Utils.Distributions;
 
 namespace OptionPricer.Greeks.EuropeanOptionGreeks;
 
