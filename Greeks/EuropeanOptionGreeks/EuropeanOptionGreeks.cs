@@ -1,9 +1,10 @@
+using OptionPricer.Greeks.Core;
 using OptionPricer.Options.EuropeanOptions;
 using OptionPricer.Utils.Distributions;
 
 namespace OptionPricer.Greeks.EuropeanOptionGreeks;
 
-public abstract class EuropeanOptionGreeks : IEuropeanOptionGreeks
+public abstract class EuropeanOptionGreeks : IGreeksFirstOrder, IGreeksSecondOrder
 {
     public EuropeanOption option;
 
