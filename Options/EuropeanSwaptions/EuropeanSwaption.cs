@@ -11,13 +11,7 @@ public abstract class EuropeanSwaption : IEuropeanSwaption
     public double t;  // Swap tenor
     public int m;  // Compoundings per year
 
-    // Default Constructor 
-    protected EuropeanSwaption()
-    {
-        K = 0.1; vol = 0.1; r = 0.1; T = 2; t = 1; m = 4;
-    }
-
-    // Constructor 
+    // Constructor
     protected EuropeanSwaption(double K, double vol, double r, double T, double t, int m)
     {
         this.K = K; this.vol = vol; this.r = r; this.T = T; this.t = t; this.m = m;
