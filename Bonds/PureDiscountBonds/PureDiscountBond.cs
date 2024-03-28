@@ -1,29 +1,30 @@
+using OptionPricer.Utils.Discounting;
+
 namespace OptionPricer.Bonds.PureDiscountBonds;
 
-public abstract class PureDiscountBond
+public class PureDiscountBond : IPureDiscountBond
 {
-    public double k;  // Speed of adjustment
-    public double u;  // Long-term rate
-    public double vol;  // Short rate volatility
-    public double r;  // Short rate
+    public double coupon;  // coupon amount
+    public double principle;  // principle amount
+    public double n;  // number of periods
+    public double m;  // number of coupons per period
 
     // Default Constructor
-    protected PureDiscountBond() : this(0.25, 0.1, 0.1, 0.1)
+    protected PureDiscountBond() : this(1000, 50, 1)
     {
     }
 
     // Constructor
-    protected PureDiscountBond(double k, double u, double vol, double r)
+    protected PureDiscountBond(double coupon, double principle, double n, double m = 1)
     {
-        this.k = k; this.u = u; this.vol = vol; this.r = r;
+        this.coupon = coupon; this.principle = principle; this.n = n; this.m = m;
     }
 
-    // PDB price at time t for PDB with maturity at time s (t<=s)
-    public abstract double P(double t, double s);
-
-    // Spot rate at time t for PDB with maturity at time s (t<=s)
-    public abstract double RSpot(double t, double s);
-
-    // Spot rate volatility
-    public abstract double RVol(double t, double s);
+    // Bond present value given some discount rate r
+    public double P(double r)
+    {
+        double principlePV = InterestRateCalculator.PresentValue(principle, r, n, 1);
+        double couponsPV = InterestRateCalculator.PresentValueAnnuity(coupon, r, n, m);
+        return principlePV + couponsPV;
+    }
 }
