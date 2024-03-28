@@ -15,6 +15,6 @@ public class VasicekBondCallOption : VasicekBondOption
     // Option Price
     public override double Price(VasicekBond model)
     {
-        return 0;
+        throw new NotImplementedException();
     }
 }

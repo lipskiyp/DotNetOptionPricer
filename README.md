@@ -1,1 +1,1 @@
-# DotNet Financial Option Pricer
+# Option Pricer
