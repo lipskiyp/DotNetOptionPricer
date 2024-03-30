@@ -1,6 +1,7 @@
 ﻿using OptionPricer.Utils.Extensions;
 using OptionPricer.Options.EuropeanOptions;
 using OptionPricer.Options.EuropeanSwaptions;
+using OptionPricer.Utils.Dates;
 
 // European Options
 EuropeanCallOption callOption = new(100, 0.1, 0.1, 0, 2);
@@ -14,3 +15,9 @@ Console.WriteLine();
 // European Swaptions
 EuropeanPayerSwaption payerSwaption = new(0.075, 0.2, 0.06, 2, 4, 2);
 payerSwaption.Display(0.07);
+
+
+Date date1 = new(2009, 3, 2);
+Date date2 = new(2010, 3, 2);
+
+Console.WriteLine(date1.YearFractionAct360(date2));
