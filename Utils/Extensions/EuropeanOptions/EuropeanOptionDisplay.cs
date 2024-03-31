@@ -1,4 +1,4 @@
-using OptionPricer.Options.EuropeanOptions;
+using OptionPricer.Instruments.Options;
 
 namespace OptionPricer.Utils.Extensions;
 
@@ -7,7 +7,7 @@ public static class EuropeanOptionDisplay
     public static void Display(this EuropeanOption option, double S)
     {
         // Price
-        Console.WriteLine($"Price: {option.Price(S)}");
+        Console.WriteLine($"Price: {option.Pricer.Price(S)}");
 
         // First Order Greeks
         Console.WriteLine($"Delta: {option.Greeks.Delta(S)}");

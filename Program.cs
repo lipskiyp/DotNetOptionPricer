@@ -1,6 +1,5 @@
 ﻿using OptionPricer.Utils.Extensions;
-using OptionPricer.Options.EuropeanOptions;
-using OptionPricer.Options.EuropeanSwaptions;
+using OptionPricer.Instruments.Options;
 using OptionPricer.Utils.Dates;
 
 // European Options

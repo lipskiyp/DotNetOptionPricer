@@ -155,7 +155,7 @@ public class DateScheduler
         return MatchLastDate(schedule);
     }
 
-    // Prints DateTime Schedule matrix
+    // Displays DateTime Schedule matrix
     public void DisplaySchedule()
     {
         foreach (DateTime[] day in GenerateSchedule())
