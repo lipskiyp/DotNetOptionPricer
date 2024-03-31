@@ -2,7 +2,7 @@ using OptionPricer.Pricers.Bonds;
 
 namespace OptionPricer.Instruments.Bonds;
 
-public class VasicekBond
+public class VasicekBond : IVasicekBond
 {
     public double k;  // Speed of adjustment
     public double u;  // Long-term rate

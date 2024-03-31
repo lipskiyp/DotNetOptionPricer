@@ -2,7 +2,7 @@ using OptionPricer.Pricers.Bonds;
 
 namespace OptionPricer.Instruments.Bonds;
 
-public class PureDiscountBond
+public class PureDiscountBond : IPureDiscountBond
 {
     public double coupon;  // coupon amount
     public double principle;  // principle amount
