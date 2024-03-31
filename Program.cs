@@ -1,6 +1,7 @@
 ﻿using OptionPricer.Utils.Extensions;
 using OptionPricer.Instruments.Options;
-using OptionPricer.Utils.Dates;
+using OptionPricer.Instruments.Bonds;
+using System.Linq.Expressions;
 
 // European Options
 EuropeanCallOption callOption = new(100, 0.1, 0.1, 0, 2);
@@ -15,5 +16,9 @@ Console.WriteLine();
 EuropeanPayerSwaption payerSwaption = new(0.075, 0.2, 0.06, 2, 4, 2);
 payerSwaption.Display(0.07);
 
-DateScheduler scheduler = new(new DateTime(2020, 1, 3), new DateTime(2020, 2, 11), ScheduleFrequency.Biweekly, true, -2, 2, -1);
-scheduler.DisplaySchedule();
+
+Bond bond = new(new DateTime(2020, 12, 31), new DateTime(2022, 12, 31), 0.025, 1000);
+bond.scheduler.DisplaySchedule();
+Console.WriteLine("Bond Dirty Price: {0}", bond.pricer.CleanPrice(new DateTime(2020, 12, 31), 0.1));
+
+

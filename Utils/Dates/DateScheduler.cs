@@ -1,10 +1,5 @@
 namespace OptionPricer.Utils.Dates;
 
-public enum ScheduleFrequency 
-{
-    Weekly, Biweekly, Monthly, Quarterly, Semiannual, Annual
-}
-
 public class DateScheduler
 {
     public DateTime startDate;  // Schedule Start Date 
@@ -14,7 +9,7 @@ public class DateScheduler
 
     public int fixingDateOffset;  // Fixing Date offset relative to period Start Date 
     public int paymentDateOffset;  // Payment Date offset relative to period End Date 
-    public int businessDateOffset;  // Date offset if it is not a business date 
+    public int businessDateOffset;  // Date offset step if it is not a business date 
 
     // Constructor 
     public DateScheduler(DateTime startDate, DateTime endDate, ScheduleFrequency scheduleFrequency, bool matchEndDate = true,
@@ -127,8 +122,8 @@ public class DateScheduler
         return schedule;
     }
 
-    // Generates DateTime Schedule matrix with Fixing Date, Start Date, End Date, Payment Date
-    public DateTime[][] GenerateSchedule()
+    // Generates full DateTime Schedule matrix with Fixing Date, Start Date, End Date, Payment Date
+    public DateTime[][] GenerateFullSchedule()
     {
         int nperiods = CountPeriods();
         DateTime[][] schedule = new DateTime[nperiods][];
@@ -155,10 +150,34 @@ public class DateScheduler
         return MatchLastDate(schedule);
     }
 
+    // Generates short DateTime Schedule matrix with Start Date, End Date
+    public DateTime[][] GenerateShortSchedule()
+    {
+        int nperiods = CountPeriods();
+        DateTime[][] schedule = new DateTime[nperiods][];
+
+        DateTime currentDate = startDate;
+        DateTime nextDate = NextDate(currentDate);
+
+        for (int period = 0; period < nperiods; period++)
+        {
+            schedule[period] = [
+                BusinessDateOffset(currentDate), 
+                BusinessDateOffset(nextDate), 
+            ];
+
+            currentDate = nextDate;
+            nextDate = NextDate(currentDate);
+        }
+
+        return MatchLastDate(schedule); 
+    }
+
+
     // Displays DateTime Schedule matrix
     public void DisplaySchedule()
     {
-        foreach (DateTime[] day in GenerateSchedule())
+        foreach (DateTime[] day in GenerateFullSchedule())
         {
             foreach(DateTime date in day)
             {

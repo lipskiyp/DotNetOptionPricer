@@ -1,5 +1,7 @@
 namespace OptionPricer.Utils.Dates;
 
+public delegate double YearFraction(DateTime startDate, DateTime endDate);
+
 public static class DateYearFraction
 {
     public static double YearFractionActAct(DateTime startDate, DateTime endDate)
