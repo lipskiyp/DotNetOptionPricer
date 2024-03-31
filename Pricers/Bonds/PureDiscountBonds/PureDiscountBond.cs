@@ -1,7 +1,7 @@
 using OptionPricer.Instruments.Bonds;
 using OptionPricer.Utils.Discounting;
 
-namespace OptionPricer.Pricer.Bonds;
+namespace OptionPricer.Pricers.Bonds;
 
 public class PureDiscountBondPricer : IPureDiscountBondPricer
 {

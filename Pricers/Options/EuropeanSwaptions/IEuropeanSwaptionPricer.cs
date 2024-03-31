@@ -1,4 +1,4 @@
-namespace OptionPricer.Pricer.Options;
+namespace OptionPricer.Pricers.Options;
 
 public interface IEuropeanSwaptionPricer
 {

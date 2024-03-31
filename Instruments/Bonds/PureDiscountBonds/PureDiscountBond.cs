@@ -1,4 +1,4 @@
-using OptionPricer.Pricer.Bonds;
+using OptionPricer.Pricers.Bonds;
 
 namespace OptionPricer.Instruments.Bonds;
 

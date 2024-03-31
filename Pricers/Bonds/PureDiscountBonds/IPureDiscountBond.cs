@@ -1,4 +1,4 @@
-namespace OptionPricer.Pricer.Bonds;
+namespace OptionPricer.Pricers.Bonds;
 
 public interface IPureDiscountBondPricer
 {

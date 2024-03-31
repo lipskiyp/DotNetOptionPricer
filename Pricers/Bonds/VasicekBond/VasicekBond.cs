@@ -1,6 +1,6 @@
 using OptionPricer.Instruments.Bonds;
 
-namespace OptionPricer.Pricer.Bonds;
+namespace OptionPricer.Pricers.Bonds;
 
 public class VasicekBondPricer : IVasicekBondPricer
 {

@@ -1,7 +1,7 @@
 using OptionPricer.Instruments.Options;
 using OptionPricer.Utils.Distributions;
 
-namespace OptionPricer.Pricer.Options;
+namespace OptionPricer.Pricers.Options;
 
 public class EuropeanCallOptionPricer : EuropeanOptionPricer
 {

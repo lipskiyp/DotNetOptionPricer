@@ -1,6 +1,6 @@
 using OptionPricer.Instruments.Options;
 
-namespace OptionPricer.Pricer.Options;
+namespace OptionPricer.Pricers.Options;
 
 abstract public class EuropeanOptionPricer : IEuropeanOptionPricer
 {
