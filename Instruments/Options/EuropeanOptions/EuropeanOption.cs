@@ -3,7 +3,7 @@ using OptionPricer.Pricers.Options;
 
 namespace OptionPricer.Instruments.Options;
 
-public abstract class EuropeanOption
+public abstract class EuropeanOption : IEuropeanOption
 {
     public double K;  // Strike price
     public double vol;  // Volatility

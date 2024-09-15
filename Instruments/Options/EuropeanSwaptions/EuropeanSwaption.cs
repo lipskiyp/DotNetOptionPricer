@@ -2,7 +2,7 @@ using OptionPricer.Pricers.Options;
 
 namespace OptionPricer.Instruments.Options;
 
-public abstract class EuropeanSwaption 
+public abstract class EuropeanSwaption : IEuropeanSwaption
 {
     public double K;  // Strike swap rate
     public double vol;  // Forward swap rate volatility
